@@ -35,10 +35,10 @@ Biar kodenya rapi dan sesuai dengan standar coding yang baik, saya sudah memisah
 Kalau Anda tertarik untuk melihat atau menguji kode website ini di komputer Anda sendiri:
 
 1. Kloning repositori ini terlebih dahulu:
-   git clone https://github.com/fatahilah-tkj/nama-repo-kamu.git
+   git clone https://github.com/fatahilah-tkj/portofolio.git
 
 2. Masuk ke dalam folder proyeknya:
-   cd nama-repo-kamu
+   cd portofolio
 
 3. Langsung klik dua kali pada file index.html untuk membukanya di browser, atau gunakan ekstensi Live Server di VS Code / Acode Anda.
 
