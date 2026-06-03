@@ -1,4 +1,11 @@
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* ==========================================================================
+   RESET & VARIABEL UTAMA
+   ========================================================================== */
+*, *::before, *::after { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
 
 :root {
   --cream: #F9F6F1;
@@ -13,7 +20,9 @@
   --gold: #C9A84C;
 }
 
-html { scroll-behavior: smooth; }
+html { 
+  scroll-behavior: smooth; 
+}
 
 body {
   font-family: 'DM Sans', sans-serif;
@@ -23,7 +32,9 @@ body {
   overflow-x: hidden;
 }
 
-/* NAVBAR UTAMA */
+/* ==========================================================================
+   NAVBAR UTAMA
+   ========================================================================== */
 nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -71,10 +82,6 @@ nav.nav-hidden {
   transition: 0.3s;
 }
 
-.overlay-header {
-  display: none;
-}
-
 .nav-overlay {
   display: flex;
   align-items: center;
@@ -100,7 +107,13 @@ nav.nav-hidden {
   color: var(--accent);
 }
 
-/* HERO */
+.overlay-header {
+  display: none;
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
 #home {
   min-height: 100vh;
   display: flex;
@@ -110,7 +123,9 @@ nav.nav-hidden {
   overflow: hidden;
 }
 
-.hero-bg-line { display: none; }
+.hero-bg-line { 
+  display: none; 
+}
 
 .hero-content {
   position: relative;
@@ -123,7 +138,9 @@ nav.nav-hidden {
   width: 100%;
 }
 
-.hero-text { flex: 1; }
+.hero-text { 
+  flex: 1; 
+}
 
 .hero-eyebrow {
   display: inline-block;
@@ -176,8 +193,12 @@ nav.nav-hidden {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* SECTION BASE */
-section { padding: 90px 5%; }
+/* ==========================================================================
+   SECTION BASE & ABOUT
+   ========================================================================== */
+section { 
+  padding: 90px 5%; 
+}
 
 .section-inner {
   max-width: 1100px;
@@ -209,7 +230,9 @@ section { padding: 90px 5%; }
   border-radius: 2px;
 }
 
-#about, #skills, #projects, #certificates, #contact, footer { background: var(--white); }
+#about, #skills, #projects, #certificates, #contact, footer { 
+  background: var(--white); 
+}
 
 .about-grid {
   display: grid;
@@ -260,8 +283,14 @@ section { padding: 90px 5%; }
   color: var(--white);
 }
 
-.achievement-card .meta-card-label { color: rgba(255,255,255,0.7); }
-.achievement-card .meta-card-value { color: var(--white); font-size: 1rem; }
+.achievement-card .meta-card-label { 
+  color: rgba(255,255,255,0.7); 
+}
+
+.achievement-card .meta-card-value { 
+  color: var(--white); 
+  font-size: 1rem; 
+}
 
 .achievement-badge {
   display: inline-block;
@@ -276,7 +305,9 @@ section { padding: 90px 5%; }
   margin-bottom: 0.75rem;
 }
 
-/* SEKSI SKILLS */
+/* ==========================================================================
+   SEKSI SKILLS
+   ========================================================================== */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -338,7 +369,9 @@ section { padding: 90px 5%; }
   border-radius: 50%;
 }
 
-/* PROJECTS */
+/* ==========================================================================
+   SEKSI PROJECTS
+   ========================================================================== */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -373,11 +406,26 @@ section { padding: 90px 5%; }
   object-fit: cover;
 }
 
-.project-info { padding: 1.5rem; }
-.project-card-title { font-size: 1.1rem; font-weight: 600; color: var(--ink); margin-bottom: 0.5rem; }
-.project-desc { font-size: 0.88rem; color: var(--ink-soft); line-height: 1.6; }
+.project-info { 
+  padding: 1.5rem; 
+}
 
-/* CERTIFICATES */
+.project-card-title { 
+  font-size: 1.1rem; 
+  font-weight: 600; 
+  color: var(--ink); 
+  margin-bottom: 0.5rem; 
+}
+
+.project-desc { 
+  font-size: 0.88rem; 
+  color: var(--ink-soft); 
+  line-height: 1.6; 
+}
+
+/* ==========================================================================
+   SEKSI CERTIFICATES (KARTU & GRID)
+   ========================================================================== */
 .cert-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -413,46 +461,201 @@ section { padding: 90px 5%; }
   transition: transform 0.4s;
 }
 
-.cert-card:hover .cert-img-wrap img { transform: scale(1.03); }
-.cert-info { padding: 1.2rem 1.4rem; }
-.cert-name { font-weight: 600; font-size: 0.95rem; color: var(--ink); margin-bottom: 0.3rem; }
-.cert-year { font-size: 0.82rem; color: var(--ink-muted); }
+.cert-card:hover .cert-img-wrap img { 
+  transform: scale(1.03); 
+}
 
-.cert-drive-btn {
+.cert-info { 
+  padding: 1.2rem 1.4rem; 
+}
+
+.cert-name { 
+  font-weight: 600; 
+  font-size: 0.95rem; 
+  color: var(--ink); 
+  margin-bottom: 0.3rem; 
+}
+
+.cert-year { 
+  font-size: 0.82rem; 
+  color: var(--ink-muted); 
+}
+
+/* OPTIMASI KARTU SERTIFIKAT VERTIKAL (PORTRAIT) */
+.cert-card.pkl-vertical .cert-img-wrap {
+  height: auto;
+  aspect-ratio: 3 / 4;
+  background-color: #fff;
+}
+
+.cert-card.pkl-vertical .cert-img-wrap img {
+  object-fit: contain;
+  padding: 0.5rem;
+}
+
+/* ARANSEMEN CONTAINER TOMBOL UTAMA BERDAMPINGAN/SIMETRIS */
+.cert-buttons-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+  padding: 0 1rem;
+}
+
+.cert-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 320px;
+  padding: 0.8rem 1.5rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  text-align: center;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.cert-btn.btn-primary {
+  background-color: var(--accent);
+  color: #ffffff;
+  border: 2px solid var(--accent);
+}
+
+.cert-btn.btn-primary:hover {
+  background-color: transparent;
+  color: var(--accent);
+}
+
+.cert-btn.btn-secondary {
+  background-color: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+}
+
+.cert-btn.btn-secondary:hover {
+  background-color: var(--accent);
+  color: #ffffff;
+}
+
+/* TOMBOL LIHAT TRANSKRIP INTERNAL KARTU */
+.btn-transkrip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.8rem;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  color: var(--accent);
+  border: 1.5px solid var(--accent);
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-transkrip:hover {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+/* ==========================================================================
+   HALAMAN KHUSUS ARSIP SERTIFIKAT (& BACK BUTTON)
+   ========================================================================== */
+.certificates-page {
+  padding-top: 120px;
+}
+
+.back-btn-wrap {
+  margin-bottom: 2rem;
+}
+
+.back-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--accent);
-  color: var(--white);
   text-decoration: none;
-  font-size: 0.875rem;
-  font-weight: 500;
-  padding: 0.75rem 1.5rem;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.2s;
+}
+
+.back-btn:hover {
+  transform: translateX(-4px);
+}
+
+/* ==========================================================================
+   SISTEM ANIMASI MODAL POP-UP (PRESERVED & CLEANED)
+   ========================================================================== */
+.modal {
+  display: flex;
+  position: fixed;
+  z-index: 9999;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.modal.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 85vh;
   border-radius: 8px;
-  transition: background 0.2s, transform 0.2s;
-}
-
-.cert-drive-btn:hover {
-  background: var(--accent-soft);
-  transform: translateY(-1px);
-}
-
-.cert-drive-btn svg { width: 18px; height: 18px; fill: currentColor; }
-
-/* SERTIFIKAT VERTIKAL */
-.pkl-vertical .cert-img-wrap {
-  background: #ffffff;
-  padding: 0.5rem 0;
-}
-
-.pkl-vertical .cert-img-wrap img {
+  box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+  transform: scale(0.7);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   object-fit: contain;
-  width: 100%;
-  height: 100%;
-  transform: scale(1.15);
+  border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
-/* STYLE SEKSI CONTACT MINIMALIS */
+.modal.show .modal-content {
+  transform: scale(1);
+}
+
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: rgba(250, 250, 250, 0.2);
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 28px;
+  line-height: 1;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.close-modal:hover {
+  background: rgba(250, 250, 250, 0.4);
+}
+
+/* ==========================================================================
+   CONTACT SECTION MINIMALIS
+   ========================================================================== */
 .contact-grid {
   display: flex;
   flex-direction: column;
@@ -488,7 +691,9 @@ section { padding: 90px 5%; }
 .github-color { background-color: #24292e; }
 .email-color { background-color: #EA4335; }
 
-/* FOOTER */
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
 footer {
   text-align: center;
   padding: 2rem;
@@ -498,10 +703,10 @@ footer {
 }
 
 /* ==========================================================================
-   MEDIA QUERIES (RESPONSIF DESKTOP)
+   MEDIA QUERIES (RESPONSIF DESKTOP & LAPTOP)
    ========================================================================== */
 @media (min-width: 769px) {
-  /* Desktop Skills Sticky */
+  /* Sticky Header Skills */
   #skills .section-inner {
     display: flex;
     align-items: flex-start;
@@ -521,7 +726,7 @@ footer {
     gap: 1.5rem;
   }
 
-  /* Desktop Certificates Grid & Spanning LKS */
+  /* Grid Sertifikat Berdampingan */
   .cert-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
@@ -535,7 +740,18 @@ footer {
     margin-bottom: 1.5rem;
   }
 
-  /* Desktop Contact Grid Horizontal */
+  /* Tombol Utama Sertifikat Berjajar */
+  .cert-buttons-wrapper {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+  
+  .cert-btn {
+    width: auto;
+    max-width: none;
+  }
+
+  /* Kontak Grid Horizontal */
   .contact-grid {
     flex-direction: row;
     max-width: 800px;
@@ -547,15 +763,32 @@ footer {
 }
 
 /* ==========================================================================
-   MEDIA QUERIES (RESPONSIF MOBILE)
+   MEDIA QUERIES (RESPONSIF MOBILE / SMARTPHONE)
    ========================================================================== */
 @media (max-width: 768px) {
-  .hero-content { flex-direction: column-reverse; gap: 2.5rem; text-align: center; }
-  .hero-tagline { margin: 0 auto; }
-  .hero-photo-wrap { width: 200px; height: 200px; }
-  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .hero-content { 
+    flex-direction: column-reverse; 
+    gap: 2.5rem; 
+    text-align: center; 
+  }
+  
+  .hero-tagline { 
+    margin: 0 auto; 
+  }
+  
+  .hero-photo-wrap { 
+    width: 200px; 
+    height: 200px; 
+  }
+  
+  .about-grid { 
+    grid-template-columns: 1fr; 
+    gap: 2rem; 
+  }
 
-  .menu-toggle { display: flex; }
+  .menu-toggle { 
+    display: flex; 
+  }
 
   .nav-overlay {
     position: fixed;
@@ -573,363 +806,90 @@ footer {
     transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .nav-overlay.open { right: 0; }
-  .overlay-header { display: flex; align-items: center; justify-content: space-between; width: 100%; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
-  .close-btn { font-size: 2rem; color: var(--ink-soft); cursor: pointer; line-height: 1; }
-  .overlay-title { display: block; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-muted); }
-  .overlay-links { flex-direction: column; gap: 1rem; align-items: flex-start; width: 100%; }
-  .overlay-links a { font-size: 1.05rem; width: 100%; }
+  .nav-overlay.open { 
+    right: 0; 
+  }
+  
+  .overlay-header { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    width: 100%; 
+    border-bottom: 1px solid var(--border); 
+    padding-bottom: 0.5rem; 
+  }
+  
+  .close-btn { 
+    font-size: 2rem; 
+    color: var(--ink-soft); 
+    cursor: pointer; 
+    line-height: 1; 
+  }
+  
+  .overlay-title { 
+    display: block; 
+    font-size: 0.85rem; 
+    font-weight: 600; 
+    letter-spacing: 0.05em; 
+    text-transform: uppercase; 
+    color: var(--ink-muted); 
+  }
+  
+  .overlay-links { 
+    flex-direction: column; 
+    gap: 1rem; 
+    align-items: flex-start; 
+    width: 100%; 
+  }
+  
+  .overlay-links a { 
+    font-size: 1.05rem; 
+    width: 100%; 
+  }
 }
-
-/* Styling Perapian Tombol Sertifikat Berdampingan / Simetris */
-.cert-buttons-wrapper {
-  display: flex;
-  flex-direction: column; /* Default di HP: numpuk vertikal tapi rapi */
-  gap: 1rem;
-  align-items: center;
-  justify-content: center;
-  margin-top: 3rem;
-  padding: 0 1rem;
-}
-
-.cert-btn {
+/* ==========================================================================
+   OPTIMASI TOMBOL GOOGLE DRIVE DI HALAMAN CERTIFICATES (BIRU KONSISTEN)
+   ========================================================================== */
+.cert-drive-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
   width: 100%;
-  max-width: 320px;
+  max-width: 340px;
+  margin: 3rem auto 0 auto;
   padding: 0.8rem 1.5rem;
+  background-color: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  border-radius: 6px;
   font-family: 'DM Sans', sans-serif;
-  font-size: 0.88rem; /* Diturunkan sedikit dari 0.95rem biar aman di HP */
-  text-align: center; /* Jaga-jaga kalau teksnya tetap overload di layar super kecil */
+  font-size: 0.88rem;
   font-weight: 600;
   text-decoration: none;
-  border-radius: 6px;
   transition: all 0.2s ease;
   cursor: pointer;
 }
 
-/* Gaya Tombol Lihat Semua (Warna Biru Utama) */
-.cert-btn.btn-primary {
-  background-color: var(--accent);
-  color: #ffffff;
-  border: 2px solid var(--accent);
-}
-
-.cert-btn.btn-primary:hover {
-  background-color: transparent;
-  color: var(--accent);
-}
-
-/* Gaya Tombol Google Drive (Gaya Outline Minimalis) */
-.cert-btn.btn-secondary {
-  background-color: transparent;
-  color: var(--accent);
-  border: 2px solid var(--accent);
-}
-
-.cert-btn.btn-secondary:hover {
+.cert-drive-btn:hover {
   background-color: var(--accent);
   color: #ffffff;
 }
 
-/* RESPONSIVITAS: Kalau dibuka di Laptop/Tablet, tombol otomatis jajar ke samping */
-@media (min-width: 768px) {
-  .cert-buttons-wrapper {
-    flex-direction: row; /* Berdampingan horizontal */
-    gap: 1.5rem;
-  }
-  .cert-btn {
-    width: auto; /* Lebar otomatis mengikuti teks */
-    max-width: none;
-  }
-}
-/* ==========================================================================
-   OPTIMASI ANIMASI MODAL POP-UP (HALAMAN SERTIFIKAT)
-   ========================================================================== */
-
-/* Efek transisi halus saat modal muncul */
-.modal {
-  transition: visibility 0s, opacity 0.3s ease-in-out;
+/* Mengunci ukuran IKON SVG Google Drive */
+.cert-drive-btn svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
 }
 
-/* Saat modal aktif, ganti tingkat transparansi menjadi penuh */
-.modal.show {
-  opacity: 1;
+/* MEMAKSA WARNA LOGO SEGITIGA GOOGLE DRIVE MENJADI BIRU SENADA */
+.cert-drive-btn svg path {
+  fill: var(--accent);
+  transition: fill 0.2s ease;
 }
 
-/* Animasi membesar halus (pop-effect) pada gambar ketika terbuka */
-.modal-content {
-  transform: scale(0.7);
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-  object-fit: contain;
-  border: 2px solid rgba(255, 255, 255, 0.1);
-}
-
-.modal.show .modal-content {
-  transform: scale(1);
-}
-
-/* Optimasi tombol silang (X) agar mudah ditekan jari di HP */
-.close-modal {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  background: rgba(250, 250, 250, 0.2);
-  width: 45px;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  font-size: 28px;
-  line-height: 1;
-  transition: background 0.2s;
-}
-
-.close-modal:hover {
-  background: rgba(250, 250, 250, 0.4);
-}
-/* ==========================================================================
-   GAYA KHUSUS HALAMAN SERTIFIKAT & ANIMASI POP-UP MODAL
-   ========================================================================== */
-.certificates-page {
-  padding-top: 120px;
-}
-
-.back-btn-wrap {
-  margin-bottom: 2rem;
-}
-
-.back-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  text-decoration: none;
-  color: var(--accent);
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: transform 0.2s;
-}
-
-.back-btn:hover {
-  transform: translateX(-4px);
-}
-
-.btn-transkrip {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  margin-top: 0.8rem;
-  padding: 0.5rem 1rem;
-  background-color: transparent;
-  color: var(--accent);
-  border: 1.5px solid var(--accent);
-  border-radius: 4px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.btn-transkrip:hover {
-  background-color: var(--accent);
-  color: #fff;
-}
-
-/* SISTEM POP-UP MODAL */
-.modal {
-  display: flex;
-  position: fixed;
-  z-index: 9999;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.85);
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.modal.show {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-.modal-content {
-  max-width: 90%;
-  max-height: 85vh;
-  border-radius: 8px;
-  box-shadow: 0 5px 25px rgba(0,0,0,0.5);
-  transform: scale(0.7);
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-  object-fit: contain;
-  border: 2px solid rgba(255, 255, 255, 0.1);
-}
-
-.modal.show .modal-content {
-  transform: scale(1);
-}
-
-.close-modal {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  background: rgba(250, 250, 250, 0.2);
-  width: 45px;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  font-size: 28px;
-  line-height: 1;
-  color: #fff;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.close-modal:hover {
-  background: rgba(250, 250, 250, 0.4);
-}
-/* ==========================================================================
-   OPTIMASI KARTU SERTIFIKAT VERTIKAL (PORTRAIT)
-   ========================================================================== */
-
-/* Targetkan kartu yang memiliki class pkl-vertical */
-.cert-card.pkl-vertical .cert-img-wrap {
-  height: auto; /* Bebaskan tinggi batasan box agar tidak memotong gambar */
-  aspect-ratio: 3 / 4; /* Atur rasio kotak mengikuti standar kertas portrait */
-  background-color: #fff; /* Beri latar putih jika ada sisa ruang */
-}
-
-.cert-card.pkl-vertical .cert-img-wrap img {
-  object-fit: contain; /* Paksa gambar agar mengecil dan muat 100% di dalam kotak */
-  padding: 0.5rem; /* Beri sedikit jarak aman di tepi kotak */
-}
-
-/* ==========================================================================
-   GAYA KHUSUS HALAMAN SERTIFIKAT & ANIMASI POP-UP MODAL
-   ========================================================================== */
-.certificates-page {
-  padding-top: 120px;
-}
-
-.back-btn-wrap {
-  margin-bottom: 2rem;
-}
-
-.back-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  text-decoration: none;
-  color: var(--accent);
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: transform 0.2s;
-}
-
-.back-btn:hover {
-  transform: translateX(-4px);
-}
-
-.btn-transkrip {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  margin-top: 0.8rem;
-  padding: 0.5rem 1rem;
-  background-color: transparent;
-  color: var(--accent);
-  border: 1.5px solid var(--accent);
-  border-radius: 4px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.btn-transkrip:hover {
-  background-color: var(--accent);
-  color: #fff;
-}
-
-/* SISTEM POP-UP MODAL */
-.modal {
-  display: flex;
-  position: fixed;
-  z-index: 9999;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.85);
-  align-items: center;
-  justify-content: center;
-  
-  /* Logika Transisi Animasi Kejelasan Elemen */
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.modal.show {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-.modal-content {
-  max-width: 90%;
-  max-height: 85vh;
-  border-radius: 8px;
-  box-shadow: 0 5px 25px rgba(0,0,0,0.5);
-  transform: scale(0.7);
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-  object-fit: contain;
-  border: 2px solid rgba(255, 255, 255, 0.1);
-}
-
-.modal.show .modal-content {
-  transform: scale(1);
-}
-
-.close-modal {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  background: rgba(250, 250, 250, 0.2);
-  width: 45px;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  font-size: 28px;
-  line-height: 1;
-  color: #fff;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.close-modal:hover {
-  background: rgba(250, 250, 250, 0.4);
-}
-
-/* ==========================================================================
-   OPTIMASI KARTU SERTIFIKAT VERTIKAL (PORTRAIT)
-   ========================================================================== */
-.cert-card.pkl-vertical .cert-img-wrap {
-  height: auto;
-  aspect-ratio: 3 / 4;
-  background-color: #fff;
-}
-
-.cert-card.pkl-vertical .cert-img-wrap img {
-  object-fit: contain;
-  padding: 0.5rem;
+/* Saat tombol di-hover, warna logo ikut berubah menjadi putih bersama teks */
+.cert-drive-btn:hover svg path {
+  fill: #ffffff;
 }
