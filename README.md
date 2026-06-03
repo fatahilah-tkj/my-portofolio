@@ -2,31 +2,28 @@
 
 Ini adalah repositori kode sumber (source code) untuk website portofolio pribadi saya. Website ini saya bangun sebagai tempat untuk memajang hasil belajar, proyek lab, dokumentasi sertifikat, serta keahlian teknis yang saya kuasai di bidang IT Network & System Administration.
 
+Website ini sudah live dan bisa diakses di: [fatahilah-portofolio.vercel.app](https://fatahilah-portofolio.vercel.app)
+
 ---
 
 ## ✨ Apa Saja yang Menarik di Website Ini?
 
 * Desain Simpel & Nyaman di Mata: Menggunakan kombinasi warna krem, hitam tinta, dan biru aksen yang minimalis. Tujuannya agar HRD atau klien bisa betah membaca profil saya tanpa terganggu visual yang ramai.
 * Responsif (Bagus di HP & Laptop): Kalau dibuka lewat HP, menunya otomatis berubah jadi gaya tirai ramping yang hemat tempat. Kalau dibuka di laptop, tampilannya melebar dengan rapi memanfaatkan sistem grid desktop.
-* Highlight Juara LKS: Karena sertifikat Juara I LKS adalah pencapaian terbesar saya, saya membuat trik grid khusus di layar desktop agar kartu sertifikat ini otomatis nangkring sendirian di baris paling atas bagian tengah.
+* Halaman Khusus Semua Sertifikat: Selain menampilkan sertifikat utama di halaman depan, website ini dilengkapi halaman khusus (`certificates.html`) untuk mengarsipkan seluruh koleksi sertifikat secara rapi tanpa membebani halaman utama.
 * Kategori Skill yang Jelas: Keahlian teknis saya bagi menjadi 4 kotak visual yang interaktif (Hardware, Cisco, MikroTik, dan Server) lengkap dengan warna tema pembeda di setiap kotaknya.
 * Navbar Pintar: Navigasi atasnya sengaja dibuat peka terhadap gerakan scroll. Menu akan otomatis sembunyi secara halus saat layar digulir ke bawah (biar space membaca luas), dan muncul lagi saat layar digulir ke atas.
 
 ---
 
-## 🛠️ Struktur Kode (Refactored)
+## 🛠️ Struktur Kode & Manajemen Aset
 
-Biar kodenya rapi dan sesuai dengan standar coding yang baik, saya sudah memisahkan struktur website ini menjadi 3 file modular:
-1. index.html — Berisi murni kerangka teks, konten portofolio, dan susunan seksi halaman.
-2. style.css — Berisi semua bumbu estetika, mulai dari variabel warna, tipografi font, hingga pengaturan layout responsif.
-3. script.js — Berisi logika JavaScript ringan (Vanilla JS) untuk menggerakkan menu hamburger di HP dan efek sembunyi pada navbar.
-
-### 📋 Konten Portofolio yang Saya Pajang:
-* Tentang Saya: Profil singkat saya sebagai alumni TKJ SMK Patriot Pituruh lulusan 2026, cerita kemenangan LKS, hingga antusiasme baru saya di bidang AI Prompt Engineering untuk bantu otomatisasi server.
-* Skills: Detail keahlian mulai dari rakit PC, splicing kabel FO, konfigurasi routing dinamis Cisco (OSPF, BGP), setup internet gateway & firewall MikroTik, sampai kelola server Linux (Debian 12/13) dan Active Directory Windows Server 2022.
-* Projects: Dokumentasi proyek rancang bangun jaringan kantor 3 lantai pakai Cisco Packet Tracer dan setup jaringan internet gateway lewat MikroTik.
-* Certificates: Dokumentasi digital sertifikat resmi saya (lengkap halaman depan dan transkrip nilai belakang) dari UPTD BLK Kebumen serta Izzan Mediatek Computindo (IMC Computer).
-* Contact: Tombol kontak minimalis yang kalau diklik langsung mengarah ke WhatsApp, LinkedIn, GitHub, dan Gmail asli saya.
+Biar kodenya rapi dan sesuai dengan standar coding yang baik, proyek ini dibagi secara modular dan terstruktur:
+1. index.html — Berisi kerangka teks utama, profil, ringkasan skill, dan seksi kontak.
+2. certificates.html — Halaman khusus galeri arsip digital untuk semua sertifikat yang saya miliki.
+3. style.css — Lembar gaya CSS utama yang mengontrol estetika dan responsivitas kedua halaman HTML.
+4. script.js — Logika JavaScript (Vanilla JS) untuk menu hamburger dan efek scroll navbar otomatis.
+5. assets/certificates/ — Folder khusus tempat penyimpanan seluruh file gambar sertifikat agar manajemen aset tetap rapi.
 
 ---
 
