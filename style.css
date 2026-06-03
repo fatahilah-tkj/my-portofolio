@@ -33,6 +33,47 @@ body {
 }
 
 /* ==========================================================================
+   OPTIMASI INTERAKSI SENTUH GLOBAL (ANTI-HIGHLIGHT BIRU HP)
+   ========================================================================== */
+a, button, .menu-toggle, .close-btn, .close-modal, .contact-btn, .btn-transkrip, .cert-drive-btn {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* --- OPSI 3 (SCALE + FADE) UNTUK ELEMEN TEKS & NAVIGASI --- */
+.nav-logo,
+.overlay-links a,
+.back-btn,
+.menu-toggle,
+.close-btn,
+.close-modal {
+  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.15s ease;
+}
+
+.nav-logo:active,
+.overlay-links a:active,
+.back-btn:active,
+.menu-toggle:active,
+.close-btn:active,
+.close-modal:active {
+  transform: scale(0.96); /* Membal menyusut 4% */
+  opacity: 0.75;           /* Pudar halus 25% */
+}
+
+/* --- OPSI 2 (BACKGROUND SHIFT) UNTUK TOMBOL BERLATAR SOLID --- */
+.contact-btn,
+.btn-transkrip,
+.cert-drive-btn {
+  transition: filter 0.15s ease, transform 0.15s ease;
+}
+
+.contact-btn:active,
+.btn-transkrip:active,
+.cert-drive-btn:active {
+  filter: brightness(0.85); /* Blok warna menggelap 15% */
+  transform: scale(0.98);    /* Efek tekanan mekanis sedalam 2% */
+}
+
+/* ==========================================================================
    NAVBAR UTAMA
    ========================================================================== */
 nav {
@@ -493,7 +534,7 @@ section {
   padding: 0.5rem;
 }
 
-/* ARANSEMEN CONTAINER TOMBOL UTAMA BERDAMPINGAN/SIMETRIS */
+/* CONTAINER TOMBOL UTAMA BERDAMPINGAN/SIMETRIS DI INDEX */
 .cert-buttons-wrapper {
   display: flex;
   flex-direction: column;
@@ -544,7 +585,7 @@ section {
   color: #ffffff;
 }
 
-/* TOMBOL LIHAT TRANSKRIP INTERNAL KARTU */
+/* TOMBOL INTERNAL KARTU (LIHAT TRANSKRIP) */
 .btn-transkrip {
   display: inline-flex;
   align-items: center;
@@ -567,7 +608,51 @@ section {
 }
 
 /* ==========================================================================
-   HALAMAN KHUSUS ARSIP SERTIFIKAT (& BACK BUTTON)
+   OPTIMASI TOMBOL GOOGLE DRIVE (CENTERED & RESPONSIVE)
+   ========================================================================== */
+.cert-drive-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: calc(100% - 2rem);
+  max-width: 340px;
+  margin: 3.5rem auto 0 auto;
+  padding: 0.8rem 1.2rem;
+  background-color: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  border-radius: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.cert-drive-btn:hover {
+  background-color: var(--accent);
+  color: #ffffff;
+}
+
+.cert-drive-btn svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.cert-drive-btn svg path {
+  fill: var(--accent);
+  transition: fill 0.2s ease;
+}
+
+.cert-drive-btn:hover svg path {
+  fill: #ffffff;
+}
+
+/* ==========================================================================
+   HALAMAN KHUSUS ARSIP SERTIFIKAT LENGKAP
    ========================================================================== */
 .certificates-page {
   padding-top: 120px;
@@ -585,15 +670,10 @@ section {
   color: var(--accent);
   font-weight: 600;
   font-size: 0.95rem;
-  transition: transform 0.2s;
-}
-
-.back-btn:hover {
-  transform: translateX(-4px);
 }
 
 /* ==========================================================================
-   SISTEM ANIMASI MODAL POP-UP (PRESERVED & CLEANED)
+   SISTEM POP-UP MODAL TRANSKRIP
    ========================================================================== */
 .modal {
   display: flex;
@@ -646,11 +726,6 @@ section {
   line-height: 1;
   color: #fff;
   cursor: pointer;
-  transition: background 0.2s;
-}
-
-.close-modal:hover {
-  background: rgba(250, 250, 250, 0.4);
 }
 
 /* ==========================================================================
@@ -675,15 +750,8 @@ section {
   text-decoration: none;
   font-weight: 600;
   font-size: 1rem;
-  transition: all 0.3s ease;
   color: #ffffff;
   box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-}
-
-.contact-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-  filter: brightness(1.1);
 }
 
 .wa-color { background-color: #25D366; }
@@ -703,10 +771,9 @@ footer {
 }
 
 /* ==========================================================================
-   MEDIA QUERIES (RESPONSIF DESKTOP & LAPTOP)
+   MEDIA QUERIES (RESPONSIF LAPTOP / DESKTOP)
    ========================================================================== */
 @media (min-width: 769px) {
-  /* Sticky Header Skills */
   #skills .section-inner {
     display: flex;
     align-items: flex-start;
@@ -726,7 +793,6 @@ footer {
     gap: 1.5rem;
   }
 
-  /* Grid Sertifikat Berdampingan */
   .cert-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
@@ -740,7 +806,6 @@ footer {
     margin-bottom: 1.5rem;
   }
 
-  /* Tombol Utama Sertifikat Berjajar */
   .cert-buttons-wrapper {
     flex-direction: row;
     gap: 1.5rem;
@@ -751,7 +816,11 @@ footer {
     max-width: none;
   }
 
-  /* Kontak Grid Horizontal */
+  .cert-drive-btn {
+    font-size: 0.9rem;
+    max-width: 360px;
+  }
+
   .contact-grid {
     flex-direction: row;
     max-width: 800px;
@@ -763,7 +832,7 @@ footer {
 }
 
 /* ==========================================================================
-   MEDIA QUERIES (RESPONSIF MOBILE / SMARTPHONE)
+   MEDIA QUERIES (RESPONSIF HP BERLAYAR SEMPIT)
    ========================================================================== */
 @media (max-width: 768px) {
   .hero-content { 
@@ -847,65 +916,10 @@ footer {
     width: 100%; 
   }
 }
-/* ==========================================================================
-   OPTIMASI TOMBOL GOOGLE DRIVE (KONSISTEN MOBILE & DESKTOP)
-   ========================================================================== */
-.cert-drive-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  width: calc(100% - 2rem);
-  max-width: 340px;
-  margin: 3.5rem auto 0 auto;
-  padding: 0.8rem 1.2rem; /* Sedikit merapatkan padding agar teks aman */
-  background-color: transparent;
-  color: var(--accent);
-  border: 2px solid var(--accent);
-  border-radius: 6px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.85rem; /* Ukuran font ideal agar teks tidak gampang patah baris */
-  font-weight: 600;
-  text-decoration: none;
-  white-space: nowrap; /* Memaksa teks tetap dalam 1 baris, dilarang patah ke bawah */
-  transition: all 0.2s ease;
-  cursor: pointer;
-}
 
-/* Efek Hover */
-.cert-drive-btn:hover {
-  background-color: var(--accent);
-  color: #ffffff;
-}
-
-/* Ikon SVG Drive */
-.cert-drive-btn svg {
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-}
-
-.cert-drive-btn svg path {
-  fill: var(--accent);
-  transition: fill 0.2s ease;
-}
-
-.cert-drive-btn:hover svg path {
-  fill: #ffffff;
-}
-
-/* KONDISI KHUSUS DESKTOP (Layar Lebar) */
-@media (min-width: 769px) {
-  .cert-drive-btn {
-    font-size: 0.9rem; /* Ukuran font sedikit lebih tegas di komputer/laptop */
-    max-width: 360px;  /* Batas lebar tombol sedikit disesuaikan untuk desktop */
-  }
-}
-
-/* KONDISI KHUSUS MOBILE SANGAT KECIL (Mencegah teks meluber keluar tombol) */
 @media (max-width: 360px) {
   .cert-drive-btn {
-    font-size: 0.78rem; /* Mengecilkan teks secara otomatis hanya pada HP berlayar super sempit */
+    font-size: 0.78rem;
     gap: 0.4rem;
   }
   .cert-drive-btn svg {
