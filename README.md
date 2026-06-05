@@ -1,12 +1,21 @@
 # 🌐 Halo, Saya Fatahilah Miftahul Rahman!
 
-Ini adalah repositori kode sumber (source code) untuk website portofolio pribadi saya. Website ini saya bangun sebagai tempat untuk memajang hasil belajar, proyek lab, dokumentasi sertifikat, serta keahlian teknis yang saya kuasai di bidang IT Network & System Administration.
+Ini adalah repositori kode sumber (*source code*) untuk website portofolio pribadi saya. Website ini saya bangun sebagai tempat untuk memajang hasil belajar, proyek lab, dokumentasi sertifikat, serta keahlian teknis yang saya kuasai di bidang **IT Network & System Administration**.
+
+Sebagai lulusan TKJ yang juga sedang mendalami **AI Prompt Engineering**, saya memanfaatkan teknologi LLM (Large Language Model) untuk membantu otomatisasi skrip jaringan dan pemecahan masalah (*troubleshooting*) sistem server agar implementasi di industri menjadi lebih efisien dan aman.
 
 Website ini sudah live dan bisa diakses di: [fatahilah-portofolio.vercel.app](https://fatahilah-portofolio.vercel.app)
 
 ---
 
 ## ✨ Apa Saja yang Menarik di Website Ini?
+
+* **Optimasi Kecepatan & Performa (Web Vitals):** 
+  * Menggunakan teknik *Asynchronous Font Loading* untuk mencegah font memblokir proses render halaman.
+  * Penerapan *Fetch Priority High* pada aset LCP (Largest Contentful Paint) dan *Lazy Loading* pada gambar sekunder agar website terasa instan saat dibuka dari HP.
+  * *On-Demand Image Loading* pada modal transkrip sertifikat untuk menghemat bandwidth pengguna.
+* **Manajemen Cache Tingkat Lanjut:** Konfigurasi khusus melalui `vercel.json` untuk menerapkan cache jangka panjang (`immutable`) pada aset statis guna mempercepat kunjungan berulang (subsequent visits).
+* **Siap SEO & Aksesibilitas:** Dilengkapi dengan struktur HTML5 Semantik yang ramah *screen reader*, file `sitemap.xml`, `robots.txt`, dan optimasi *Meta Tags* untuk mesin pencari.
 
 * Desain Simpel & Nyaman di Mata: Menggunakan kombinasi warna krem, hitam tinta, dan biru aksen yang minimalis. Tujuannya agar HRD atau klien bisa betah membaca profil saya tanpa terganggu visual yang ramai.
 * Responsif (Bagus di HP & Laptop): Kalau dibuka lewat HP, menunya otomatis berubah jadi gaya tirai ramping yang hemat tempat. Kalau dibuka di laptop, tampilannya melebar dengan rapi memanfaatkan sistem grid desktop.
@@ -19,11 +28,13 @@ Website ini sudah live dan bisa diakses di: [fatahilah-portofolio.vercel.app](ht
 ## 🛠️ Struktur Kode & Manajemen Aset
 
 Biar kodenya rapi dan sesuai dengan standar coding yang baik, proyek ini dibagi secara modular dan terstruktur:
-1. index.html — Berisi kerangka teks utama, profil, ringkasan skill, dan seksi kontak.
-2. certificates.html — Halaman khusus galeri arsip digital untuk semua sertifikat yang saya miliki.
-3. style.css — Lembar gaya CSS utama yang mengontrol estetika dan responsivitas kedua halaman HTML.
-4. script.js — Logika JavaScript (Vanilla JS) untuk menu hamburger dan efek scroll navbar otomatis.
-5. assets/certificates/ — Folder khusus tempat penyimpanan seluruh file gambar sertifikat agar manajemen aset tetap rapi.
+1. `index.html` — Berisi kerangka teks utama, profil, ringkasan skill, dan seksi kontak.
+2. `certificates.html` — Halaman khusus galeri arsip digital untuk semua sertifikat yang saya miliki.
+3. `style.css` — Lembar gaya CSS utama yang mengontrol estetika dan responsivitas kedua halaman HTML.
+4. `script.js` — Logika JavaScript (Vanilla JS) untuk menu hamburger, efek scroll navbar, dan modal pop-up.
+5. `vercel.json` — Konfigurasi server Vercel untuk optimasi header `Cache-Control` pada aset statis.
+6. `sitemap.xml` & `robots.txt` — File konfigurasi SEO untuk membantu indexing mesin pencari seperti Google.
+7. `assets/` — Folder khusus tempat penyimpanan seluruh file gambar profil, topologi, dan sertifikat agar manajemen aset tetap rapi.
 
 ---
 
