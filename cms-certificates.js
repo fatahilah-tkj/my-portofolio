@@ -47,10 +47,12 @@
 
     container.innerHTML = '';
     certificates.forEach(cert => {
-      // Tentukan kelas tambahan untuk tipe vertical
+      const isFeatured = (cert.id === '1' || cert.id === 1);
       const additionalClass = cert.tipe === 'vertical' ? 'pkl-vertical' : '';
+      const featuredClass = isFeatured ? 'featured-cert' : '';
       const card = document.createElement('div');
-      card.className = `cert-card ${additionalClass}`;
+      card.className = `cert-card ${additionalClass} ${featuredClass}`;
+      // ... sisanya tetap sama
 
       // Siapkan gambar dengan fallback
       const imgHtml = `<img src="${cert.imgDepan}" alt="${escapeHtml(cert.nama)}" loading="lazy" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">`;
@@ -127,7 +129,7 @@
       renderCertificates(certificatesData);
     } catch (err) {
       console.error(err);
-      container.innerHTML = `<div class="loading-status" style="grid-column:1/-1; text-align:center; color:#B22222;">❌ Gagal memuat data. Pastikan sheet sudah dipublikasikan ke web (File → Share → Publish to web).</div>`;
+      container.innerHTML = `<div class="loading-status" style="grid-column:1/-1; text-align:center; color:#B22222;">Gagal memuat API Google Sheets<br>silahkan refresh browser anda.</div>`;
     }
   }
 

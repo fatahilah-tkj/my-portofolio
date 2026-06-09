@@ -773,7 +773,26 @@ footer {
 /* ==========================================================================
    MEDIA QUERIES (RESPONSIF LAPTOP / DESKTOP)
    ========================================================================== */
-@media (min-width: 769px) {
+
+/* Untuk layar lebar mulai dari 600px (termasuk tablet dan mode desktop HP) */
+@media (min-width: 600px) {
+  /* Atur grid menjadi 2 kolom */
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  /* Kartu featured (id=1) tampil di tengah sendiri */
+  .cert-card.featured-cert {
+    grid-column: 1 / -1;
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+  }
+
+  /* Aturan lain dari sebelumnya (skills, buttons, contact, dll) */
   #skills .section-inner {
     display: flex;
     align-items: flex-start;
@@ -789,13 +808,8 @@ footer {
 
   .skills-grid {
     flex-grow: 1;
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 1.5rem;
-  }
-
-  .cert-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .lks-featured {
@@ -829,6 +843,11 @@ footer {
   .contact-btn {
     flex: 1;
   }
+}
+
+/* Untuk layar yang lebih kecil (opsional) tetap dipertahankan */
+@media (max-width: 599px) {
+  /* Aturan mobile sudah ada di bagian sebelumnya, tidak perlu diubah */
 }
 
 /* ==========================================================================

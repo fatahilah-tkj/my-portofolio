@@ -29,27 +29,31 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ==========================================
-  // 2. LOGIKA SMART HIDDEN NAVBAR ON SCROLL (SAMA DENGAN LAB ARCHIVE)
+  // 2. LOGIKA SMART HIDDEN NAVBAR ON SCROLL (DENGAN THROTTLE + RAF)
   // ==========================================
   let lastScrollTop = 0;
+  let ticking = false;
   const navbar = document.getElementById('main-nav');
 
   if (navbar) {
     window.addEventListener('scroll', function() {
-      // Menggunakan window.scrollY agar persis seperti di Lab Archive
-      let currentScroll = window.scrollY;
-      
-      // Batas toleransi disamakan menjadi 100px sebelum navbar bisa sembunyi
-      if (currentScroll > lastScrollTop && currentScroll > 100) {
-        navbar.classList.add('nav-hidden');
-      } else {
-        navbar.classList.remove('nav-hidden');
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          let currentScroll = window.scrollY;
+          
+          if (currentScroll > lastScrollTop && currentScroll > 100) {
+            navbar.classList.add('nav-hidden');
+          } else {
+            navbar.classList.remove('nav-hidden');
+          }
+          
+          lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+          ticking = false;
+        });
+        ticking = true;
       }
-      
-      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-    }, false);
+    });
   }
-
 
   // ==========================================
   // 3. LOGIKA POP-UP MODAL (ON-DEMAND LAZY LOADING)
