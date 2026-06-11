@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VGJDV3ZHCQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VGJDV3ZHCQ');
+</script>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab Archive — Fatahilah Miftahul Rahman</title>
+  <link rel="stylesheet" href="/lab-archive/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav id="navbar">
+  <a href="/" class="nav-logo">Fatahilah Miftahul Rahman</a>
+    <div class="menu-toggle" id="mobile-menu" aria-label="Buka Menu" role="button" tabIndex="0">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="nav-overlay" id="nav-overlay">
+      <div class="overlay-header">
+        <span class="overlay-title">Menu</span>
+        <div class="close-btn" id="close-menu" aria-label="Tutup Menu" role="button" tabIndex="0">&times;</div>
+      </div>
+      <ul class="overlay-links">
+        <li><a href="https://fatahilah-portofolio.vercel.app/#home">Home</a></li>
+        <li><a href="https://fatahilah-portofolio.vercel.app/#about">About</a></li>
+        <li><a href="https://fatahilah-portofolio.vercel.app/#skills">Skills</a></li>
+        <li><a href="https://fatahilah-portofolio.vercel.app/#projects">Projects</a></li>
+        <li><a href="https://fatahilah-portofolio.vercel.app/#certificates">Certificates</a></li>
+        <li><a href="https://fatahilah-portofolio.vercel.app/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <main class="certificates-page">
+    <section>
+      <div class="section-inner">
+        
+        <div class="back-btn-wrap">
+          <a href="https://fatahilah-portofolio.vercel.app/#projects" class="back-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Kembali ke Portofolio
+          </a>
+        </div>
+
+        <p class="section-label">Laboratorium Teknis</p>
+        <h1 class="section-title">Lab Archive</h1>
+        <div class="divider"></div>
+
+        <div class="cert-buttons-wrapper" style="margin-top: 0; margin-bottom: 3rem; justify-content: flex-start;">
+          <button class="cert-btn btn-secondary active-filter" data-category="all">Semua Proyek</button>
+          <button class="cert-btn btn-secondary" data-category="AI">AI</button>
+          <button class="cert-btn btn-secondary" data-category="Cisco">Cisco</button>
+          <button class="cert-btn btn-secondary" data-category="Linux">Linux</button>
+          <button class="cert-btn btn-secondary" data-category="MikroTik">MikroTik</button>
+          <button class="cert-btn btn-secondary" data-category="Windows Server">Windows Server</button>
+        </div>
+
+        <div id="projects-grid" class="cert-grid" aria-live="polite">
+          <div class="loading-status" style="grid-column: 1/-1; text-align: center; color: var(--ink-soft); font-weight: 600;">
+            Menghubungkan ke API Google Sheets...
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Fatahilah Miftahul Rahman. All rights reserved.</p>
+  </footer>
+
+  <script src="/lab-archive/app.js"></script>
+</body>
+</html>
