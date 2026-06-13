@@ -60,6 +60,7 @@ function getBadgeClass(kategori) {
   if (kat === 'linux') return 'badge-linux';
   if (kat === 'mikrotik') return 'badge-mikrotik';
   if (kat === 'windows server') return 'badge-windows';
+  if (kat === 'websiter') return 'badge-website';
   return 'badge-default';
 }
 
